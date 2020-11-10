@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+<p>This example finds the sum of all numbers in an array:</p>
+
+<p id="demo"></p>
+
+<script>
+var x=0;
+var numbers = [45, 4, 9, 16, 25];
+var sum = numbers.map(myFunction);
+
+document.getElementById("demo").innerHTML = "The sum is " + sum.pop();
+
+function myFunction(value, index, array) {
+  x+=value
+  return x;
+}
+</script>
+
+</body>
+</html>

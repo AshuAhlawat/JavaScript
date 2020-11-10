@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<script>
+  function basicMath(){document.getElementById("outBodyScript").innerHTML=10+80;}
+</script>
+<body>
+<h3>Shows different outputting ways in script</h3>
+<p id="inBodyScript"></p>
+<p id="outBodyScript"></p>
+
+<script>
+    document.write(50+50);
+    window.print(40+90);
+    document.getElementById("inBodyScript").innerHTML=20+30;
+</script>
+<button type="button" onclick="basicMath()">Out Body Answer</button>
+<button type="button" onclick="window.alert(0+20)">To Alert the Answer</button>
+<button type="button" onclick="console.log(40+80)">To Log the Answer</button>
+<button type="button" onclick="document.write(10+40)">To Clear and Answer</button>
+
+</body>
+</html>

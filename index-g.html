@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+<h2>JS Variable printing Rules</h2>
+
+<p>Numbers can be written with, or without decimals and br tag is automatically parsed even inside double quotes.</p>
+
+<p id="demo"></p>
+
+<script>
+var x1 = 34.100;
+var x2 = 30 + 10 + "<br>" + " whatever";
+var x3 = 3.14;
+
+document.getElementById("demo").innerHTML =
+x1 + "<br>" + x2 + "<br>" + x3;
+</script>
+</body>
+</html>

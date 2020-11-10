@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+<h3>Simple value changes in Arrays</h3>
+<p id="demo"></p>
+<p id="d"></p>
+<script>
+var cars = ["Saab", "Volvo", "BMW"];
+cars[0] = 6;
+document.getElementById("demo").innerHTML = cars[0] + "<br><br>" + cars[1];
+var last=cars[cars.length - 1];
+document.getElementById("d").innerHTML=last;
+</script>
+
+</body>
+</html>

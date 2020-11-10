@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+<h2>JavaScript Array.find()</h2>
+
+<p id="demo"></p>
+<p id="d"></p>
+
+<script>
+var numbers = [4, 9, 16, 25, 29];
+var first = numbers.find(myFunction1);
+
+document.getElementById("demo").innerHTML = "First number over 18 is " + first;
+
+function myFunction1(value, index, array) {
+  return value > 18;
+}
+document.getElementById("d").innerHTML = "First number over 18 has index " + first;
+
+function myFunction2(value, index, array) {
+  return value > 18;}
+</script>
+</body>
+</html>

@@ -1,0 +1,8 @@
+index-k
+onmouseout keyword?
+index-o
+how to print an object in an array
+index-p
+the Unshift command
+index-s
+loop inside loop fix

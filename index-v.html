@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+
+<h2>JavaScript new Date()</h2>
+
+<p>6 numbers specify year, month, day, hour, minute and second:</p>
+
+<p id="demo"></p>
+
+<script>
+var d = new Date(2018, 11, 24, 10, 33, 30);
+document.getElementById("demo").innerHTML = d.toString();
+var today, someday, text;
+today = new Date();
+someday = new Date();
+someday.setFullYear(2100, 0, 14);
+
+if (someday > today) {
+  text = "Today is before January 14, 2100.";
+} else {
+  text = "Today is after January 14, 2100.";
+}
+document.getElementById("demo").innerHTML = text;
+</script>
+</body>
+</html>

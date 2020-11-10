@@ -1,0 +1,1 @@
+//the js file for index c is on a webaddress

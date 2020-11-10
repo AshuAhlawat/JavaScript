@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JS</title>
+</head>
+<body>
+<h2>Enter Details</h2>
+
+<div>
+    <form name="bio" onsubmit="myfunction()">
+        <b>Name</b><input type="text" name="name"><br>
+        <b>Age*</b><input type="number" id="age" required><br>
+        <input type="radio">Male
+        <input type="radio">Female
+        <input type="submit">
+    </form>
+</div>
+
+<p id="display"></p>
+
+<script>
+function myFunction() {
+var age, textage, name, textname;
+  name = document.forms["bio"]["name"].value;
+  if (name==""){
+                  textname="Anonmyous";
+                 }
+         else {
+                textname=name + " ";
+              }
+
+  age = document.getElementById("age").value;
+  if (age < 17) {
+    textage = "You are too young for the Job";
+  } else if(x > 22) {
+    textage = " you are too old for this job";
+  }
+  else {textage=" your age, " + x + "is just Right"
+  }
+   document.getElementById("display").innerHTML =textname + textage;
+}
+</script>
+
+</body>
+</html>
