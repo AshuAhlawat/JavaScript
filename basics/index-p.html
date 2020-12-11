@@ -23,32 +23,6 @@
 <p id="demo14"></p>
 <p id="demo15"></p>
 
-<script>
-    var fruits = ["Banana", "Orange", "Apple", "Mango"];
-    document.getElementById("demo1").innerHTML = fruits.join("    ");
-    var y = fruits.pop();
-    document.getElementById("demo2").innerHTML = fruits;
-    fruits.push("Tomato");
-    document.getElementById("demo3").innerHTML = fruits;
-    var z = fruits.shift();
-    document.getElementById("demo4").innerHTML = fruits;
-    var x = fruits.unshift("Grapes");
-    console.log(x);
-    document.getElementById("demo5").innerHTML = fruits;
-    fruits[1]="Pomegrenate";
-    document.getElementById("demo7").innerHTML = fruits;
-    fruits.splice(2,0,"Lemon","Wheat");
-    document.getElementById("demo8").innerHTML = fruits;
-    fruits.splice(3,1);
-    var a = fruits.splice(3,1);
-    document.getElementById("demo9").innerHTML = fruits;
-    var allfood = fruits.concat(a,x,y,z);
-    document.getElementById("demo10").innerHTML = allfood;
-    var badfood=allfood.slice(fruits.length);
-    document.getElementById("demo11").innerHTML = badfood;
-    fruits.sort();
-    fruits.reverse();
-    document.getElementById("demo12").innerHTML = fruits;
-</script>
+<script src="index-p.js"></script>
 </body>
 </html>
