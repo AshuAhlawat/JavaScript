@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JSON</title>
+</head>
+<body>
+<h2>Stroring and Retrieving Data using JSON</h2>
+<p id="deo"></p>
+<p id="demo"></p>
+<script>
+
+var mobiles,x,y,mobiledata;
+
+mobiles={company:"Realme",model:"3 Pro",version:"Android Q",owner:"Oppo"};
+x=JSON.stringify(mobiles);
+localStorage.setItem("mobilesJSON",x);
+
+document.getElementById("deo").innerHTML=x;
+
+y = localStorage.getItem("mobilesJSON");
+mobiledata=JSON.parse(y);
+document.getElementById("demo").innerHTML=mobiledata.company + " " + mobiledata.model;
+
+</script>
+</body>
+</html>

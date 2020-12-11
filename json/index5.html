@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu JSON</title>
+</head>
+<body>
+<p>How to modify values in a JSON object, using a for loop and a in keyword to loop through the JSON</p>
+
+<p id="demo1"></p>
+<p id="demo2"></p>
+
+<script>
+var myObj, i, x = "";
+myObj = {
+  "name":"John",
+  "age":30,
+  "cars": {
+  "car1":"Ford",
+  "car2":"BMW",
+  "car3":"Fiat"
+  }
+}
+myObj.cars.car2 = "Mercedes";
+
+for (i in myObj.cars) {
+  x += myObj.cars[i] + "<br>";
+}
+
+document.getElementById("demo1").innerHTML = x;
+
+for (i = 0; i < myObj.cars.length; i++) {
+  x += myObj.cars[i] + "<br>";
+}
+document.getElementById("demo2").innerHTML = x;
+</script>
+
+</body>
+</html>
