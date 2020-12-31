@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu BOM</title>
+</head>
+<body>
+<h3>See time and Stop it</h3>
+<p id="demo"></p>
+<button type="button" onclick="clearInterval(x); alert('STOPPED!');">Stop</button>
+<script>
+    var x = setInterval(myfunc2,500);
+    function myfunc2(){
+        var d = new Date();
+        document.getElementById("demo").innerHTML = d.toLocaleTimeString();
+    }
+</script>
+</body>
+</html>

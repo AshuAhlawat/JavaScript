@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu BOM</title>
+</head>
+<body>
+<p id="demo1"></p>
+<button onclick="func1()" id="btn1">More Info</button>
+
+<script>
+    document.getElementById("demo1").innerHTML="You are at : "+window.location.href;
+
+    function func1(){
+
+        document.getElementById("btn1").remove();
+
+        var win1 = window.open('',"","width=600,height=360");
+
+        var btn2 = document.createElement("button");
+            btn2.setAttribute("id","btn2");
+            btn2.innerHTML="Close";
+            document.body.appendChild(btn2);
+
+            document.getElementById("btn2").addEventListener("click",func2);
+
+                function func2(){
+                    win1.close();
+                }
+
+        var btn3 = document.createElement("button");
+            btn3.setAttribute("id","btn3");
+            btn3.innerHTML="Fullscreen";
+            document.body.appendChild(btn3);
+
+            document.getElementById("btn3").addEventListener("click",func3);
+
+                function func3(){
+                    win1.resizeTo(screen.availWidth,screen.availHeight);
+                    win1.focus();
+                }
+    }
+</script>
+</body>
+</html>

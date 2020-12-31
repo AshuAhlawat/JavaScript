@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu BOM</title>
+</head>
+<body>
+<h3>You can reset timers here</h3>
+5 Seconds : <br>
+<p id="demo"></p>
+<button type="button" onclick="t=setTimeout(myfunc1,1000*5)">Start</button><br>
+<button type="button" onclick="clearTimeout(t); alert('RESET!');">Reset</button>
+
+<script>
+    function myfunc1(){
+        alert("Time-Up!");
+    }
+</script>
+</body>
+</html>

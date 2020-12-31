@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu BOM</title>
+</head>
+<body>
+<h3>See time and Stop it</h3>
+<p id="demo1"></p>
+<p id="demo2"></p>
+<p id="demo3"></p>
+<button type="button" onclick="x=setInterval(myfunc,1000)">30 secs</button>
+<script>
+
+    var curTime=new Date();
+    var futTime=new Date();
+    futTime.setTime(curTime.getTime()+(5*1000));
+    document.getElementById("demo1").innerHTML=curTime;
+    document.getElementById("demo2").innerHTML=futTime;
+    function myfunc(){
+        var d = new Date();
+        if (d > futTime){
+            clearInterval(x)
+            alert("Time-UP!");
+        }
+        document.getElementById("demo3").innerHTML = d.toLocaleTimeString();
+    }
+</script>
+</body>
+</html>
