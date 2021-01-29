@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu DOM</title>
+</head>
+<body>
+<h2>Different kinds of calling Methods</h2>
+<div id="a">
+    <p class="list">One</p>
+    <p class="list">Two</p>
+    <p class="list">Three</p>
+</div>
+<p id="b"></p>
+<script>
+    var x=document.getElementsByTagName("div");
+    var y=document.querySelectorAll("p.list");
+    document.getElementById("b").innerHTML="the second number is " + y[1].innerHTML;
+</script>
+</body>
+</html>

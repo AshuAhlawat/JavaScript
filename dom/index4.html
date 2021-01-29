@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu DOM</title>
+</head>
+<div>
+<h2>Enter your Data</h2>
+<form id="form1">
+    Id:<br>
+    <input type="text" name="EId" value="required" required> <br>
+    Name:<br>
+    <input type="text" name="fname" value="First"> <br>
+    <input type="text" name="lname" value="Last"><br>
+    Age:<br>
+    <input type="number" name="age" value="00"><br><br>
+</form>
+<button type="button" onclick="myfunc1()">See what you are sending.</button>
+<form id="form2">
+    <input type="submit" onclick=myfunc2()>
+</form>
+<p id="final"></p>
+</div>
+<div>
+    <h2>Retrieve your Data</h2>
+    Id:<br>
+    <input type="text" id="getID" value=""><br><br>
+    <button type="button" onclick="myfunc3()">Show Info</button>
+    <p id="called"></p>
+</div>
+<div>
+    <br>
+    <h2>Retrieve all Data</h2>
+    <button type="button" onclick="myfunc4()">Show Info</button>
+    <p id="demo4"></p>
+</div>
+<script>
+    var x=document.forms["form1"];
+
+    function myfunc1(){
+        var txt="";
+        var i;
+        for (i=0; i<x.length;i++){
+            txt += x.elements[i].value + "<br>";
+        }
+    document.getElementById("final").innerHTML="The Data sent <br><b>" + txt + "</b> is final";
+    }
+
+    function myfunc2(){
+        var dataSent;
+        dataSent={id:x.elements[0].value , name:x.elements[1].value + " " +x.elements[2].value , age:x.elements[3].value};
+        var dataSentJSON=JSON.stringify(dataSent);
+        localStorage.setItem(x.elements[0].value,dataSentJSON);
+    }
+
+    function myfunc3(){
+        var y=document.getElementById("getID").value;
+        if (y=="") {alert("ID not Entered")};
+        var dataGotJSON=localStorage.getItem(y);
+        var dataGot=JSON.parse(dataGotJSON);
+        document.getElementById("called").innerHTML="ID doesn't exist";
+        document.getElementById("called").innerHTML="<b>Name : </b>" + dataGot.name + "<br>"
+                                                  + "<b>Age : </b>" + dataGot.age ;
+        if (y=="required"){alert("Harry Potter")}
+    }
+
+    function myfunc4() {
+        var archive = [];
+        for (var m = 0; m<localStorage.length; m++) {
+            archive[m] = localStorage.getItem(localStorage.key(m));
+        }
+        document.getElementById("demo4").innerHTML=archive
+        ;
+    }
+</script>
+</body>
+</html>

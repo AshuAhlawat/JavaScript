@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu DOM</title>
+</head>
+<body>
+<h3>Get your Id</h3>
+<input type="text" value="FirstName" id="first"><input type="text" value="LastName" id="last">
+<button type="button" onclick="myfunc()">Generate</button>
+<p id="demo"></p>
+<script>
+    function myfunc(){
+        var t=new Date();
+        var y=t.getFullYear();
+        var k=new String(y);
+        var f=document.getElementById("first").value.substr(0,1);
+        var l=document.getElementById("last").value.substr(0,1);
+        var id=k.substr(1) + t.getMonth() + f + l + t.getDate() + t.getMilliseconds();
+        document.getElementById("demo").innerHTML="Your new id is : " + id;
+
+    }
+</script>
+</body>
+</html>

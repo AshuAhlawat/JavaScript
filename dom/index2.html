@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<p id="demo">Yesssss</p>
+<button type="button" id="btn1">Unlock</button>
+<script>
+    var s;
+    document.getElementById("btn1").addEventListener("click",func1);
+    function func1(){
+        s=document.createElement("button");
+        s.setAttribute("id","btn2");
+        s.innerHTML="Unlocked";
+        document.body.appendChild(s);
+        document.getElementById("btn2").addEventListener("click",func2);
+            function func2(){
+                alert("here");
+                document.getElementById("demo").style.fontWeight="bold";
+            }
+    }
+</script>
+</body>
+</html>
