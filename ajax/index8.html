@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:https="http://www.w3.org/1999/xhtml">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<h3>Get all responses from the server</h3>
+<button type="button" onclick="loadDoc('https://jsonplaceholder.typicode.com/todos')">Get Data</button>
+<p id="demo"></p>
+<script>
+function loadDoc(url){
+    var xhr=new XMLHttpRequest();
+    xhr.open("GET",url,true);
+    xhr.onreadystatechange=function(){
+        if(this.readyState==4 && this.Status==200){
+            document.getElementById("demo").innerHTML=xhr.getAllHeaderRequests();
+        }
+    };
+    xhr.send();
+}
+</script>
+</body>
+</html>

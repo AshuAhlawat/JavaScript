@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<h3></h3>
+<form action="">
+    <select name="dropdown" onchange="showId(this.value)">
+        <option value="">Select an Id</option>
+        <option value="1">Leanne Graham</option>
+        <option value="2">Ervin Howell</option>
+        <option value="3">Clementine Bauch</option>
+        <option value="4">Patricia Lebsack</option>
+        <option value="5">Chelsey Dietrich</option>
+        <option value="6">Dennis Schulist</option>
+        <option value="7">Kurtis Weissnat</option>
+        <option value="8">Nicholas Runolfsdottir</option>
+        <option value="9">Glenna Reichert</option>
+        <option value="10">Clementina DuBuque</option>
+    </select>
+</form>
+<p id="demo"></p>
+<script>
+    function showId(str){
+        if (str == "") {
+            document.getElementById("demo").innerHTML = "";
+            return;
+        }
+
+        var xhr=new XMLHttpRequest();
+        xhr.open("GET","https://jsonplaceholder.typicode.com/users",true);
+
+        xhr.onreadystatechange=function(){
+
+            if(this.readyState==4 && this.status==200){
+                var i;
+                var txt="";
+                var obj=JSON.parse(this.responseText);
+
+                for(i=0;i<obj.length;i++){
+                    if (str==obj[i].id){
+                        txt += obj[i].email;
+                    } else txt += "";
+                };
+
+                document.getElementById("demo").innerHTML=txt;
+            }
+        };
+        xhr.send(null);
+    };
+</script>
+</body>
+</html>

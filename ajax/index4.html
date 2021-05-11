@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+    var xhr = new XMLHttpRequest();
+
+    xhr.open('GET','https://jsonplaceholder.typicode.com/photos/7',true);
+    xhr.onreadystatechange = function(){
+        alert("here " + this.readyState + this.status);
+        if(this.readyState==4 && this.status==200){
+            var x =JSON.parse(this.responseText)
+            document.getElementById("demo").innerHTML=x.url;
+            alert(x.url);
+            location.replace(x.url)
+            };
+        }
+     xhr.send(null);
+
+</script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<p id="demo"></p>
+<script>
+var xhr = new XMLHttpRequest();
+
+xhr.open('GET','https://jsonplaceholder.typicode.com/users', true);
+
+xhr.onreadystatechange = function() {
+    if (this.readyState == 4 && this.status == 200) {
+    var obj = JSON.parse(this.responseText);
+        document.getElementById("demo").innerHTML = obj[0].name;
+    }
+}
+xhr.send(null);
+</script>
+</body>
+</html>

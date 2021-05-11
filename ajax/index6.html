@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<button type="button" onclick="createSource()">For NAME</button>
+<p id=" demo"></p>
+<script>
+    var x,y;
+    function createSource(){
+    x = document.createElement("script");
+    x.src="https://www.w3schools.com/js/demo_jsonp.php";
+    document.body.appendChild(x);
+    }
+    function myfunc(y){
+    document.getElementById("demo").innerHTML=y.name;
+    }
+</script>
+</body>
+</html>

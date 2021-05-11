@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<button type="button" onclick="loadDoc()">Request data</button>
+
+<p id="demo"></p>
+
+<script>
+function loadDoc() {
+  var xhr = new XMLHttpRequest();
+  var post1={
+    userId: 1,
+    id: 1,
+    title: "sunt aut facere repellat provident occaecati excepturi optio reprehenderit",
+    body: "quia et suscipit\nsuscipit recusandae consequuntur expedita et cum\nreprehenderit molestiae ut ut quas totam\nnostrum rerum est autem sunt rem eveniet architecto"
+  }
+  xhr.open("POST", "https://jsonplaceholder.typicode.com/posts", true);
+
+  xhr.onreadystatechange = function() {
+      var x = JSON.parse(this.responseText)
+      document.getElementById("demo").innerHTML = x.id;
+    }
+  xhr.send(post1);
+}
+</script>
+</body>
+</html>

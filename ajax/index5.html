@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ashu AJAX</title>
+</head>
+<body>
+<p id="demo"></p>
+<h1 id="dem" align="center"></h1>
+<script>
+    var xhr,x;
+    xhr = new XMLHttpRequest();
+
+    xhr.open('GET','https://jsonplaceholder.typicode.com/usersfgdszdrf',true);
+
+    xhr.onreadystatechange = function(){
+        if (this.readyState==4 && this.status==200){
+            x=JSON.parse(this.responseText);
+                document.getElementById("demo").innerHTML=x[1].company.catchPhrase;
+        } else if (this.readyState==4 && this.status==404){
+            document.getElementById("dem").innerHTML="404 ERROR";
+            } else document.getElementById("dem").innerHTML=" " + this.status;
+    }
+    xhr.send(null);
+</script>
+</body>
+</html>
